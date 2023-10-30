@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.card{
+    @include mix.centering-using-flex($flex-dir: row);
+    border: 1px solid var.$very-dark-blue-2;
+    height: 100%;
+    width: 100%;
+}

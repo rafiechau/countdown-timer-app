@@ -1,0 +1,114 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+
+.display-countdown-timer{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 10rem;
+    .card-countdown{
+        height: 9rem;
+        width: 10rem;
+        position: relative;
+        .card{
+            p{
+                z-index: 150;
+                position: relative;
+                font-weight: 500;
+                font-size: 4rem;
+                color: var.$soft-red;
+                cursor: default;
+            }
+            .rotate{
+                animation: rotate .5s ease-in-out;
+            }
+            .card-top{
+                background-color: var.$card-top;
+                top: 0;
+                @include mix.full-size-half-height;
+                position: absolute;
+                border-radius: 5px 5px 0 0;
+            }
+            
+            .card-top-bg{
+                background-color: var.$card-top;
+                top: 0;
+                @include mix.full-size-half-height;
+                position: absolute;
+                opacity: .4;
+                z-index: 155;
+                border-radius: 5px 5px 0 0;
+            }
+            
+            .card-middle-line{
+                height: 0.1rem;
+                width: 100%;
+                position: absolute;
+                background-color: var.$dark-desaturated-blue;
+            }
+            
+            .card-bottom{
+                background-color: var.$card-bottom;
+                @include mix.full-size-half-height;
+                position: absolute;
+                bottom: 0;
+                border-radius: 0 0 5px 5px;
+            
+                box-shadow: 3px 15px 10px 0 var.$shadow;
+            }
+            
+        }
+        .card-desc{
+            width: 100%;
+            margin-top: 1rem;
+            color: var.$grayish-blue;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: .3rem;
+        }
+    }
+    
+}
+
+@media screen and (max-width: map.get(var.$breakpoints, 'md')) {
+    .display-countdown-timer {    
+        gap: 1rem;   
+        .card-countdown{
+            height: 5rem;
+            width: 6rem;
+            .card{
+                p{
+                    font-size: 1.5rem;
+
+                }
+            }
+            .card-desc{
+                font-size: .8rem;
+            }
+        } 
+    }
+}
+
+@media screen and (max-width: map.get(var.$breakpoints, 'sm')) {
+    .display-countdown-timer {    
+        gap: 1rem;   
+        .card-countdown{
+            height: 3rem;
+            width: 4rem;
+            .card{
+                p{
+                    font-size: 1rem;
+                }
+            }
+            .card-desc{
+                font-size: .5rem;
+            }
+        } 
+    }
+}
+
+
+
+

@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as var;
+@use 'sass:map';
+
+header{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: .3rem;
+    margin-top: 7rem;
+    text-transform: uppercase;
+    color: var.$white;
+}
+
+@media screen and (max-width: map.get(var.$breakpoints, 'md')) {
+    .container header {
+        font-size: 1rem;
+        text-align: center;
+        letter-spacing: 0.3rem;
+    }
+}

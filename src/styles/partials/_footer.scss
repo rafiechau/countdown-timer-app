@@ -1,0 +1,73 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+
+footer{
+    
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    img{
+        width: 100%;
+        background-size: cover;
+    }
+    .list-sosmed{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        img{
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+        }
+        img:hover{
+            width: 2rem;
+            height: 2rem;
+        
+            transition: all .3s ease-in-out;
+        }
+    }
+}
+
+@media screen and (max-width: map.get(var.$breakpoints, 'md')) {
+    footer{
+        img{
+            height: 150px;
+            // background-size: cover;
+        }
+        .list-sosmed{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+                cursor: pointer;
+            }
+            img:hover{
+                width: 2rem;
+                height: 2rem;
+            
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: map.get(var.$breakpoints, 'md')) {
+    footer{
+        img{
+            height: 100px;
+        }
+    }
+}
